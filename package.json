@@ -1,0 +1,11 @@
+{
+  "name": "solidity-graph",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Facundo Spagnuolo <facundo_spagnuolo@icloud.com>",
+  "license": "MIT",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "solidity-parser-antlr": "https://github.com/federicobond/solidity-parser-antlr.git"
+  }
+}
