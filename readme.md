@@ -1,8 +1,8 @@
 # Solidity Graph
 
-*Only available in dev mode*
+*Alpha version, feel free to leave feedback or collaborate*
 
 1. Install graphviz
-2. Clone this repo
-3. Run `node index.js path-to-folder/`
-4. Check `graph.png` out
+2. Install this tool `npm install -g git+ssh://git@github.com:facuspagnuolo/solidity-graph.git`
+3. Run `solidity-graph path-to-folder/`
+4. Check `graph.png` output
