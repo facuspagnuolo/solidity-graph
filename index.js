@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const RecursiveAnalyzer = require('./src/RecursiveAnalyzer')
 
 const dir = process.argv.slice(2)[0]
