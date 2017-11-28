@@ -1,8 +1,27 @@
 #!/usr/bin/env node
-const RecursiveAnalyzer = require('./src/RecursiveAnalyzer')
+const program = require('commander')
+const SolidityPlotter = require('./src/SolidityPlotter')
 
-const dir = process.argv.slice(2)[0]
+let dir = undefined
+let output = null
 
-if(!dir) throw new Error("Please provide a project folder to analyze")
+program
+  .usage("<dir> [output] [options]")
+  .option('-c, --colored', 'Use colored edges')
+  .action((_dir, _output) => {
+    dir = _dir
+    output = _output
+  })
+  .parse(process.argv)
 
-new RecursiveAnalyzer(dir).call()
+
+if(!dir) {
+  console.error("Please provide a dir to analyze")
+  process.exit(1);
+}
+
+const options = {
+  colored: program.colored
+}
+
+new SolidityPlotter(dir, output, options).call()
