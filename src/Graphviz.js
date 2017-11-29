@@ -2,9 +2,9 @@ const fs = require('fs')
 const spawn = require('child_process').spawn
 
 const graphviz = {
-  output(path, data) {
+  output(outputDir, data) {
     const imageFileName = 'graph.png'
-    const imageFilePath = `${path}/${imageFileName}`.replace(/(\/)+/g, "$1");
+    const imageFilePath = `${outputDir}/${imageFileName}`.replace(/(\/)+/g, "$1");
 
     try {
       this._processData(data, imageFilePath);

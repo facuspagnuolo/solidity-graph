@@ -13,8 +13,10 @@ $ solidity-graph -h
 
 ## Running
 ```
-Usage: index <dir> [output] [options]
+Usage: index <inputDir> [options]
+
 Options:
-  -c, --colored  Use colored edges
-  -h, --help     output usage information
+  -o, --output <outputDir>  Set an specific output dir
+  -c, --colored             Use colored edges
+  -h, --help                output usage information
 ``` 

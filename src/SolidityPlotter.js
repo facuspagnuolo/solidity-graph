@@ -7,17 +7,17 @@ const GraphvizTraducer = require('./GraphvizTraducer')
 
 class SolidityPlotter {
 
-  constructor(dir, output = null, options = {}) {
-    this.dir = dir
-    this.output = output
+  constructor(inputDir, outputDir, options = {}) {
+    this.inputDir = inputDir
+    this.outputDir = outputDir
     this.options = options
     this.graph = {}
     this.errors = []
   }
 
   call() {
-    console.log("Analyzing dir ", this.dir)
-    this._parseFilesInDir(this.dir)
+    console.log("Analyzing dir ", this.inputDir)
+    this._parseFilesInDir(this.inputDir)
     this._processResults()
   }
 
@@ -59,7 +59,7 @@ class SolidityPlotter {
     console.log('\n')
     if(this.errors.length !== 0) console.log('Please report this errors: ', this.errors)
     const data = new GraphvizTraducer(this.graph, this.options).call()
-    graphviz.output(this.output, data)
+    graphviz.output(this.outputDir, data)
   }
 }
 

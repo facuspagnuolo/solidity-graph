@@ -2,26 +2,23 @@
 const program = require('commander')
 const SolidityPlotter = require('./src/SolidityPlotter')
 
-let dir = undefined
-let output = null
+let inputDir = undefined
 
 program
-  .usage("<dir> [output] [options]")
+  .usage("<inputDir> [options]")
+  .option('-o, --output <outputDir>', 'Set an specific output dir')
   .option('-c, --colored', 'Use colored edges')
-  .action((_dir, _output) => {
-    dir = _dir
-    output = _output
-  })
+  .action((_inputDir) => inputDir = _inputDir)
   .parse(process.argv)
 
-
-if(!dir) {
-  console.error("Please provide a dir to analyze")
+if(!inputDir) {
+  console.error("Please provide an input dir to analyze")
   process.exit(1);
 }
 
-const options = {
-  colored: program.colored
-}
+console.log()
 
-new SolidityPlotter(dir, output, options).call()
+const outputDir = program.output || '.'
+const options = { colored: program.colored }
+
+new SolidityPlotter(inputDir, outputDir, options).call()
