@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const program = require('commander')
-const SolidityPlotter = require('./src/SolidityPlotter')
+const SolidityPlotter = require('./SolidityPlotter')
 
 let inputDir = undefined
 

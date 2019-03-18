@@ -1,0 +1,30 @@
+@import "css/variables";
+@import "css/fonts";
+
+html {
+  background-color: $primary-0;
+  font-family: 'SourceRegular', Roboto, serif !important;
+}
+
+.container .row {
+  margin: 0;
+}
+
+.container {
+  width: 70% !important;
+}
+
+.main-container {
+  padding-top: 30px;
+}
+
+@import "css/common/buttons";
+@import "css/common/cards";
+@import "css/common/chips";
+@import "css/common/forms";
+@import "css/common/navbar";
+@import "css/common/overlay";
+@import "css/common/titles";
+
+@import "css/sections/home";
+@import "css/sections/account";
